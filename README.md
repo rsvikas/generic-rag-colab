@@ -3,6 +3,8 @@
 Build your own Knowledge DB from your own PDFs. Offline. No cloud. No API key.
 
 This is **not** a legal tool.
+I am experimenting with Karnataka legal as a test subject. Legal is not the main product. The RAG system is the main product.
+
 
 Karnataka legal laws are used here only as **one test example** to check if the tool works.
 Tomorrow you can use the same tool with medical books, college notes, company manuals, or any other PDFs.
@@ -37,7 +39,7 @@ time.sleep(5)
 ### Step 2: Launch Application
 
 ```python
-!git clone https://github.com/rsvikas/karnataka-legal-rag-assistant.git
+!git clone https://github.com/rsvikas/generic-rag-colab.git
 %cd karnataka-legal-rag-assistant
 !python scripts/legal_rag_app.py
 ```
@@ -50,7 +52,7 @@ The app needs a ready-made index. It looks in this order:
 
 1. `./indices` - if already in repo folder
 2. Google Drive - `/content/drive/MyDrive/Legal_RAG_Backup/indices` - your own backup
-3. GitHub Release - `v1.0.0/indices.zip` - downloads and unzips automatically
+3. GitHub Release - `v1.0.0/indices.zip` (in `generic-rag-colab` repo) - downloads and unzips automatically
 
 Index contains:
 - `faiss.index` - FAISS vector index
@@ -115,7 +117,7 @@ Extra feature in this version:
 
 This repo cannot build an index. To build a new index:
 
-1. Use the other repo: `legal-rag-system`
+1. Use the other repo: `generic-rag-system`
 2. Build index there on RunPod GPU
 3. Publish the new `indices.zip` as a GitHub Release, or put it in Google Drive
 4. This Colab app will then use the new index
@@ -137,7 +139,7 @@ This repo cannot build an index. To build a new index:
 - Query / RAG: ✅ Working in Colab
 - Hybrid search: ✅ FAISS + BM25
 - Acronym expansion: ✅ Karnataka test acronyms
-- Index building: ❌ Not in this repo - use `legal-rag-system`
+- Index building: ❌ Not in this repo - use `generic-rag-system`
 
 Note: Current code is tuned for the Karnataka legal test (prompt says legal, acronyms are Karnataka legal). The concept is generic, code will be made fully generic in next update.
 
@@ -165,5 +167,5 @@ For the Karnataka legal test: verify all answers against official Acts.
 
 ## Repo Map
 
-- `karnataka-legal-rag-assistant` (this repo) = Fully on Google Colab. Uses ready-made index. No build step.
-- `legal-rag-system` = Build on RunPod GPU, Use on PC. Main pipeline to build new index.
+- `generic-rag-colab` (this repo) = Fully on Google Colab. Uses ready-made index. No build step.
+- `generic-rag-system` = Build on RunPod GPU, Use on PC. Main pipeline to build new index.
