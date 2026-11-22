@@ -21,7 +21,7 @@ import shutil
 # --- INDEX RESOLUTION LOGIC ---
 INDEX_DIR = './indices'
 DRIVE_BACKUP = '/content/drive/MyDrive/Legal_RAG_Backup/indices'
-RELEASE_URL = 'https://github.com/rsvikas/karnataka-legal-rag-assistant/releases/download/v1.0.0/indices.zip'
+RELEASE_URL = 'https://github.com/rsvikas/generic-rag-colab/releases/download/v1.0.0/indices.zip'
 
 if not os.path.exists(INDEX_DIR):
     if os.path.exists(DRIVE_BACKUP):
